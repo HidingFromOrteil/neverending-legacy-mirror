@@ -8119,13 +8119,12 @@ G.Launch=function()
 			if (G.keys[17] && G.keysD[83]) {G.Save();}//ctrl-s
 			if (G.keysD[32])//space
 			{
-				if (!G.keys[17]) { //no ctrl, pause
-					if (G.getSetting('paused')) G.setSetting('paused',0);
+				if (G.getSetting('paused')) G.setSetting('paused',0);
 					else G.setSetting('paused',1)
-				} else { //ctrl, sat toggle
-					if (G.getSetting('fast')) G.setSetting('fast',0);
-					else G.setSetting('fast',1)					
-				}
+			}
+			if (G.keysD[191]) { // slash
+				if (G.getSetting('fast')) G.setSetting('fast',0);
+					else G.setSetting('fast',1)
 			}
 		}
 		
